@@ -1,0 +1,180 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Examportal2.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        .border{
+            border-radius:5px;
+            border-color: #e8e9eb;
+        }
+        .lable{
+            font-weight:bold;
+        }
+        .button{
+            width:55px;
+            border-radius:5px;
+            border-color:#2686DA;
+            background-color:#2686DA;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+                <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top"  style="background-color:#ce0067">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" runat="server" href="~/" style="color:white; font-weight:bold;width: 1100px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-th glyphicon-lg" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;&nbsp; S. A. College of Arts and Science<span style="float:right" class="glyphicon glyphicon-home glyphicon-lg" aria-hidden="true"><span style="margin:4px;" class="glyphicon glyphicon-off glyphicon-lg" aria-hidden="true"></span></span></a>
+                
+                </div>
+                <!--<div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+                ??|<div class="container body-content" style="justify-content:center;margin-top:100px;margin-left:200px; margin-bottom:20px; width: 750px;box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.2);">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+             <asp:Label ID="Label0" runat="server" Text="Criteria For Internal" Width="750px" Height="25px" BackColor="#2686DA" CssClass="text-center" Font-Bold="True" ForeColor="White" ></asp:Label>
+
+            <div style="border-radius: 15px;padding:20px;background-color:#0ca6c8;width:730px; margin-top:15px; margin-left:10px; margin-bottom:5px;">
+             <div style="margin-bottom:15px;">
+            <asp:Label ID="Label1" runat="server" Text="Batch" Width="50px" CssClass="lable"></asp:Label>
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="border"><asp:ListItem>2022</asp:ListItem><asp:ListItem>2021</asp:ListItem></asp:DropDownList>
+            <asp:Label ID="Label2" runat="server" Text="Degree" CssClass="lable"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="border"></asp:TextBox>
+            <asp:Label ID="Label3" runat="server" Text="Branch" CssClass="lable"></asp:Label>
+            <asp:TextBox ID="TextBox2" runat="server" CssClass="border"></asp:TextBox>
+            <asp:Label ID="Label4" runat="server" Text="Sem" CssClass="lable"></asp:Label>
+            <asp:DropDownList ID="DropDownList2" runat="server" CssClass="border">
+                <asp:ListItem>1</asp:ListItem>
+                <asp:ListItem>2</asp:ListItem>
+                <asp:ListItem>3</asp:ListItem>
+                <asp:ListItem>4</asp:ListItem>
+                <asp:ListItem>5</asp:ListItem>
+                <asp:ListItem>6</asp:ListItem>
+            </asp:DropDownList>
+            </div>
+            
+            <asp:Label ID="Label5" runat="server" Text="Type" CssClass="lable"></asp:Label>
+            <asp:TextBox ID="TextBox3" runat="server" CssClass="border"></asp:TextBox>
+            <asp:Label ID="Label6" runat="server" Text="Subject" CssClass="lable"></asp:Label>
+            <asp:TextBox ID="TextBox4" runat="server" CssClass="border"></asp:TextBox>
+            <asp:Label ID="Label7" runat="server" Text="Criteria" CssClass="lable"></asp:Label>
+            <asp:DropDownList ID="DropDownList3" runat="server" CssClass="border">
+                <asp:ListItem>IA1ForSem1</asp:ListItem>
+                <asp:ListItem>IA1ForSem2</asp:ListItem>
+                <asp:ListItem>IA1ForSem3</asp:ListItem>
+            </asp:DropDownList>
+            <asp:Button ID="Button1" runat="server" Text="Go" CssClass="button" OnClick="Button1_Click"/>
+            </div>
+        </div>
+        <div ID="PlaceHolder1" runat="server"></div>
+        <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
+        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+            <ContentTemplate>
+                <asp:Timer ID="Timer1" runat="server" Interval="100" OnTick="Timer1_Tick"></asp:Timer>
+                <asp:GridView ID="gridService" runat="server" autogeneratecolumns="False" Style="margin-left:50px; text-align:center;">
+                <Columns>
+                    <asp:BoundField DataField="S_NO" HeaderText="S_NO" />
+                    <asp:BoundField DataField="DEGREE" HeaderText="DEGREE"/>
+                    <asp:BoundField DataField="BRANCH" HeaderText="BRANCH"/>
+                    <asp:BoundField DataField="SECTION" HeaderText="SECTION"/>
+                    <asp:BoundField DataField="SUBJECT_CODE" HeaderText="SUBJECT_CODE"/>
+                    <asp:BoundField DataField="SUBJECT_NAME" HeaderText="SUBJECT_NAME"/>
+                    <asp:BoundField DataField="EXAM_DATE" HeaderText="EXAM_DATE"/>
+                    <asp:BoundField DataField="EXAM_DURATION" HeaderText="EXAM_DURATION"/>
+                    <asp:BoundField DataField="LOCK" HeaderText="LOCK"/>
+                    <asp:BoundField DataField="LOCKDATE" HeaderText="LOCKDATE"/>
+                    <asp:BoundField DataField="MIN_MARK" HeaderText="MIN_MARK"/>
+                    <asp:BoundField DataField="MAX_MARK" HeaderText="MAX_MARK"/>
+                    <asp:BoundField DataField="START_TIME" HeaderText="START_TIME"/>
+                    <asp:BoundField DataField="END_TIME" HeaderText="END_TIME"/>
+
+                </Columns>
+                <HeaderStyle BackColor="#2686da" Height="18px" Font-Bold="true"/>
+                
+            </asp:GridView>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+           
+            
+                
+        
+              <%--  <div style="margin-left:80px; text-align:center;">
+        <asp:Table ID="Table1" runat="server" Width="1000px" GridLines="Both" BorderWidth="2">  
+        <asp:TableRow runat="server" BackColor="#2686da" Height="18px" Font-Bold="true">  
+        <asp:TableCell runat="server">S.No</asp:TableCell>  
+        <asp:TableCell runat="server">Degree</asp:TableCell>  
+        <asp:TableCell runat="server">Branch</asp:TableCell>  
+        <asp:TableCell runat="server">Section</asp:TableCell>  
+        <asp:TableCell runat="server">Criteria</asp:TableCell>  
+        <asp:TableCell runat="server">Subject Code </asp:TableCell>  
+        <asp:TableCell runat="server">Subject Name</asp:TableCell>  
+        <asp:TableCell runat="server">Exam Duration</asp:TableCell>  
+        <asp:TableCell runat="server">Lock</asp:TableCell>  
+        <asp:TableCell runat="server">Lock Date</asp:TableCell>  
+        <asp:TableCell runat="server">Min.Mark </asp:TableCell>  
+         <asp:TableCell runat="server">Max.Mark </asp:TableCell> 
+         <asp:TableCell runat="server">Start Time </asp:TableCell> 
+         <asp:TableCell runat="server">End Time</asp:TableCell> 
+
+    </asp:TableRow>  
+    <asp:TableRow runat="server" Height="35px">  
+        <asp:TableCell runat="server">1</asp:TableCell>  
+        <asp:TableCell runat="server">B.Com</asp:TableCell>  
+        <asp:TableCell runat="server">general</asp:TableCell>
+        <asp:TableCell runat="server">A</asp:TableCell>  
+        <asp:TableCell runat="server">CZ23C</asp:TableCell>  
+        <asp:TableCell runat="server">Banking therory and practical</asp:TableCell>
+        <asp:TableCell runat="server">07/08/2023</asp:TableCell>  
+        <asp:TableCell runat="server">03:00:00</asp:TableCell>  
+        <asp:TableCell runat="server">Yes</asp:TableCell>
+        <asp:TableCell runat="server">07/08/2023</asp:TableCell>  
+        <asp:TableCell runat="server">10</asp:TableCell>  
+        <asp:TableCell runat="server">40</asp:TableCell>
+        <asp:TableCell runat="server">01:00:00</asp:TableCell>  
+        <asp:TableCell runat="server">01:00:00</asp:TableCell>  
+    </asp:TableRow>       
+      
+</asp:Table>
+        </div>--%>
+
+    </form>
+</body>
+</html>
